@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="add-price">
+    <h4>Add Price</h4>
+    <input #price placeholder="Enter price" type="number" min="0">
+    <button (click)="addPrice(price)">Add</button>
+  </div>
+  <div class="min-max-prices" *ngFor="let interval of intervals">
+    <h4>Min and Max price by interval - {{ interval.interval }}</h4>
+
+    <p>MAX {{interval.tradingFutureMax.amount}}   -- Date {{ interval.tradingFutureMin.futureDate | date }}</p>
+    <p>MIN {{ interval.tradingFutureMin.amount }} -- Date {{interval.tradingFutureMax.futureDate | date}}</p>
+    <br>
+  </div>
+</div>
